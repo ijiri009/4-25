@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def show
     @user = User.find(params[:id])
@@ -32,6 +33,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :profile_image, :introduction)
@@ -40,6 +44,7 @@ class UsersController < ApplicationController
 end
 
 class UsersController < ApplicationController
+
   def show
     @user = User.find(params[:id])
     @book = Book.new

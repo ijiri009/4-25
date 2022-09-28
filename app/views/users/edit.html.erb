@@ -4,7 +4,7 @@
   <div class="user-name">Name</div>
     <%= f.text_field :name %>
   <div class="user-edit-image">Image</div>
-    <%= image_tag @user.get_profile_image(100,100) %>
+    <%= f.file_field :profile_image, accept: "image/*" %>
   <div class="form-body">Introduction</div>
     <%= f.text_area :introduction %><br>
   <div class="upload">
